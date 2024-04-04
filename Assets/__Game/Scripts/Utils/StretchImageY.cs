@@ -11,7 +11,7 @@ namespace SpaceshipVsAsteroids.Utils
       _imageTransform = GetComponent<RectTransform>();
     }
 
-    void Update()
+    void Start()
     {
       Vector2 imageSize = _imageTransform.sizeDelta;
       Vector2 screenSize = new Vector2(Screen.width, Screen.height);
