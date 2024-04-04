@@ -1,23 +1,26 @@
 ﻿using UnityEngine;
 
-public class StretchImageY : MonoBehaviour
+namespace SpaceshipVsAsteroids.Utils
 {
-  private RectTransform _imageTransform;
-
-  void Awake()
+  public class StretchImageY : MonoBehaviour
   {
-    _imageTransform = GetComponent<RectTransform>();
-  }
+    private RectTransform _imageTransform;
 
-  void Update()
-  {
-    Vector2 imageSize = _imageTransform.sizeDelta;
-    Vector2 screenSize = new Vector2(Screen.width, Screen.height);
-    float aspectRatio = imageSize.x / imageSize.y;
+    void Awake()
+    {
+      _imageTransform = GetComponent<RectTransform>();
+    }
 
-    imageSize.y = screenSize.y;
-    imageSize.x = imageSize.y * aspectRatio;
+    void Update()
+    {
+      Vector2 imageSize = _imageTransform.sizeDelta;
+      Vector2 screenSize = new Vector2(Screen.width, Screen.height);
+      float aspectRatio = imageSize.x / imageSize.y;
 
-    _imageTransform.sizeDelta = imageSize;
+      imageSize.y = screenSize.y;
+      imageSize.x = imageSize.y * aspectRatio;
+
+      _imageTransform.sizeDelta = imageSize;
+    }
   }
 }
