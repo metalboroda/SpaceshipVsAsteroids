@@ -8,7 +8,8 @@ namespace SpaceshipVsAsteroids.Ship
   {
     [SerializeField] private ShipSO shipSO;
 
-    private float _screenWidth;
+    [Space]
+    [SerializeField] private GameObject shipModel;
 
     private Camera _mainCamera;
     private Rigidbody _rb;
@@ -24,12 +25,7 @@ namespace SpaceshipVsAsteroids.Ship
 
       _inputHandler = GetComponent<PlayerInputHandler>();
 
-      _shipMovement = new ShipMovement(_rb);
-    }
-
-    private void Start()
-    {
-      _screenWidth = Screen.width;
+      _shipMovement = new ShipMovement(shipModel, _rb);
     }
 
     private void FixedUpdate()
@@ -37,6 +33,8 @@ namespace SpaceshipVsAsteroids.Ship
       RestrictToBounds();
 
       _shipMovement.MovementRb(shipSO.MovementForce, _inputHandler.GetXInput());
+      _shipMovement.RotateShipZ(
+        shipSO.RotationMultiplier, shipSO.RotationDuration, _inputHandler.GetXInput());
     }
 
     public void RestrictToBounds()

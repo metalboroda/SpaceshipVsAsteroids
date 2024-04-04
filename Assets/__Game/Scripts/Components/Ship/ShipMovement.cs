@@ -1,23 +1,18 @@
+using DG.Tweening;
 using UnityEngine;
 
 namespace SpaceshipVsAsteroids.Components
 {
   public class ShipMovement
   {
-    private float _screenWidth;
+    private GameObject _shipModel;
 
-    private Camera _mainCamera;
     private Rigidbody _rb;
 
-    public ShipMovement(Rigidbody rb)
+    public ShipMovement(GameObject shipModel, Rigidbody rb)
     {
+      _shipModel = shipModel;
       _rb = rb;
-    }
-
-    private void Start()
-    {
-      _mainCamera = Camera.main;
-      _screenWidth = Screen.width;
     }
 
     public void MovementRb(float movementForce, float xAxis)
@@ -28,15 +23,10 @@ namespace SpaceshipVsAsteroids.Components
       _rb.AddForce(force, ForceMode.Force);
     }
 
-    public void RestrictToBounds()
+    public void RotateShipZ(float rotationMultiplier, float rotationDuration, float xAxis)
     {
-      Vector3 viewPos = _mainCamera.WorldToViewportPoint(_rb.position);
-
-      viewPos.x = Mathf.Clamp01(viewPos.x);
-
-      Vector3 worldPos = _mainCamera.ViewportToWorldPoint(viewPos);
-
-      _rb.position = new Vector3(worldPos.x, _rb.position.y, _rb.position.z);
+      _shipModel.transform.DORotate(
+        new Vector3(0, 0, -xAxis * rotationMultiplier), rotationDuration).SetEase(Ease.InOutSine);
     }
   }
 }

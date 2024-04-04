@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Player_1
   m_EditorClassIdentifier: 
   <MovementForce>k__BackingField: 75
+  <RotationMultiplier>k__BackingField: 50
+  <RotationDuration>k__BackingField: 0.3

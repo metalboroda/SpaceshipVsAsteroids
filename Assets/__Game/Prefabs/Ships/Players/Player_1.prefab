@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipSO: {fileID: 11400000, guid: 55bd8be8952c588498f2491efa61a79c, type: 2}
+  shipModel: {fileID: 3016761292707676803}
 --- !u!64 &7173763664308300953
 MeshCollider:
   m_ObjectHideFlags: 0
