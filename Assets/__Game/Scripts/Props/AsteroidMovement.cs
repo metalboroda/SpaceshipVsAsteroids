@@ -1,15 +1,13 @@
-﻿using Lean.Pool;
-using SpaceshipVsAsteroids.SOs;
+﻿using SpaceshipVsAsteroids.SOs;
 using UnityEngine;
 
 namespace SpaceshipVsAsteroids.Props
 {
-  public class AsteroidMovement : MonoBehaviour, IPoolable
+  public class AsteroidMovement : MonoBehaviour
   {
     [SerializeField] private AsteroidSO asteroidSO;
 
     private Asteroid _asteroid;
-    private Vector3 _spawnPos;
     private Vector3 _moveTarget;
 
     private void Awake()
@@ -21,16 +19,6 @@ namespace SpaceshipVsAsteroids.Props
     {
       MoveToTarget();
       RotateRandom();
-    }
-
-    public void OnSpawn()
-    {
-      _spawnPos = transform.position;
-    }
-
-    public void OnDespawn()
-    {
-      transform.position = _spawnPos;
     }
 
     public void Init(Vector3 moveTarget)
