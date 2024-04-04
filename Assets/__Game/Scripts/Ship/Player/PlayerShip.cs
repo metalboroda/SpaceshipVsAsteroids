@@ -1,26 +1,25 @@
-using Lean.Pool;
 using SpaceshipVsAsteroids.Interfaces;
 using SpaceshipVsAsteroids.SOs;
 using UnityEngine;
 
-namespace SpaceshipVsAsteroids.Props
+namespace SpaceshipVsAsteroids.Ship
 {
-  public class Asteroid : MonoBehaviour, IDamageable
+  public class PlayerShip : MonoBehaviour, IDamageable
   {
-    [SerializeField] private AsteroidSO asteroidSO;
+    [SerializeField] private ShipSO shipSO;
 
     private int _health;
 
     private void Start()
     {
-      _health = asteroidSO.Health;
+      _health = shipSO.Health;
     }
 
     private void OnTriggerEnter(Collider other)
     {
       if (other.TryGetComponent(out IDamageable damageable))
       {
-        damageable.Damage(asteroidSO.CollisionDamaged);
+        damageable.Damage(shipSO.CollisionDamaged);
       }
     }
 
@@ -32,13 +31,13 @@ namespace SpaceshipVsAsteroids.Props
       {
         _health = 0;
 
-        DespawnAsteroid();
+        DestroyShip();
       }
     }
 
-    public void DespawnAsteroid()
+    private void DestroyShip()
     {
-      LeanPool.Despawn(gameObject);
+      Destroy(gameObject);
     }
   }
 }

@@ -32,9 +32,9 @@ namespace SpaceshipVsAsteroids.Ship
     {
       RestrictToBounds();
 
-      _shipMovement.MovementRb(shipSO.MovementForce, _inputHandler.GetXInput());
+      _shipMovement.MovementRb(shipSO.MovementForce, _inputHandler.GetInput());
       _shipMovement.RotateShipZ(
-        shipSO.RotationMultiplier, shipSO.RotationDuration, _inputHandler.GetXInput());
+        shipSO.RotationMultiplier, shipSO.RotationDuration, _inputHandler.GetInput());
     }
 
     public void RestrictToBounds()

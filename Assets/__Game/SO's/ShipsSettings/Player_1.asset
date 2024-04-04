@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3199bb68ee6444d47b231b0cb47b86e2, type: 3}
   m_Name: Player_1
   m_EditorClassIdentifier: 
+  <Health>k__BackingField: 1000
+  <CollisionDamaged>k__BackingField: 100
   <MovementForce>k__BackingField: 75
   <RotationMultiplier>k__BackingField: 50
   <RotationDuration>k__BackingField: 0.3

@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6c7519d784d61947a9b9ac87f8ec751, type: 3}
   m_Name: Asteroid
   m_EditorClassIdentifier: 
+  <Health>k__BackingField: 100
+  <CollisionDamaged>k__BackingField: 100
   <MinMovementSpeed>k__BackingField: 10
   <MaxMovementSpeed>k__BackingField: 15
-  <MinRotationSpeed>k__BackingField: 10
-  <MaxRotationSpeed>k__BackingField: 25
+  <MinRotationSpeed>k__BackingField: 0.05
+  <MaxRotationSpeed>k__BackingField: 0.3

@@ -37,10 +37,10 @@ namespace SpaceshipVsAsteroids.Level
 
       GameObject asteroidToSpawn = asteroidsToSpawn[Random.Range(0, asteroidsToSpawn.Count)];
       Vector3 spawnPosition = GetRandomSpawnPosition(transform.position, transform.localScale.x);
-      Asteroid spawnedAsteroid = LeanPool.Spawn(
-        asteroidToSpawn, spawnPosition, Quaternion.identity).GetComponent<Asteroid>();
+      AsteroidMovement spawnedAsteroid = LeanPool.Spawn(
+        asteroidToSpawn, spawnPosition, Quaternion.identity).GetComponent<AsteroidMovement>();
 
-      spawnedAsteroid.MoveToTarget(
+      spawnedAsteroid.Init(
         GetRandomTargetPosition(asteroidsTarget.transform.position, asteroidsTarget.transform.localScale.x));
     }
 
