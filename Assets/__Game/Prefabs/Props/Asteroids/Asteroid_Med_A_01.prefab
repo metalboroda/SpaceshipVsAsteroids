@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46710a7e27afb7640a6eb06e057a28e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  collisionDamage: 100
+  health: 75
+  collisionDamage: 50
 --- !u!114 &-8633128158201229615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169efc51133b66f469ef2089c6507160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyVFX: {fileID: 4414347565083969854, guid: eb29e595eb4b84b4dbb973be0152dab0,
+  DestroyVFX: {fileID: 4414347565083969854, guid: eb29e595eb4b84b4dbb973be0152dab0,
     type: 3}
 --- !u!1001 &9159942252136241686
 PrefabInstance:

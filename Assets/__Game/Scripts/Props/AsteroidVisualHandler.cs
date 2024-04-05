@@ -1,32 +1,17 @@
-using Lean.Pool;
-using UnityEngine;
+using SpaceshipVsAsteroids.Visual;
 
 namespace SpaceshipVsAsteroids.Props
 {
-  public class AsteroidVisualHandler : MonoBehaviour
+  public class AsteroidVisualHandler : ObjectVisualHandlerBase<Asteroid>
   {
-    [SerializeField] private GameObject destroyVFX;
-
-    private Asteroid _asteroid;
-
-    private void Awake()
+    protected override void SubscribeEvents()
     {
-      _asteroid = GetComponent<Asteroid>();
+      Target.AsteroidDestroyed += SpawnDestroyVFX;
     }
 
-    private void OnEnable()
+    protected override void UnsubscribeEvents()
     {
-      _asteroid.AsteroidDestroyed += SpawnDestroyVFX;
-    }
-
-    private void OnDisable()
-    {
-      _asteroid.AsteroidDestroyed -= SpawnDestroyVFX;
-    }
-
-    private void SpawnDestroyVFX()
-    {
-      LeanPool.Spawn(destroyVFX, transform.position, transform.rotation);
+      Target.AsteroidDestroyed -= SpawnDestroyVFX;
     }
   }
 }

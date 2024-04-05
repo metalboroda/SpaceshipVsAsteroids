@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169efc51133b66f469ef2089c6507160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyVFX: {fileID: 4414347565083969854, guid: 0f57c4aa8c9e0a742b09014b4817fbe8,
+  DestroyVFX: {fileID: 4414347565083969854, guid: 0f57c4aa8c9e0a742b09014b4817fbe8,
     type: 3}
 --- !u!1001 &1698686392031432982
 PrefabInstance:

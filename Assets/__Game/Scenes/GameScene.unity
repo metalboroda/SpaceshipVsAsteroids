@@ -655,6 +655,12 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 330585545}
+    - target: {fileID: 6655706337081519565, guid: 81c73d648d2bc4144ad29cdfad45f822,
+        type: 3}
+      propertyPath: DestroyVFX
+      value: 
+      objectReference: {fileID: 763501961395798022, guid: f3b4c054082a4494ab365cc42ba9922c,
+        type: 3}
     - target: {fileID: 7146111380540557336, guid: 81c73d648d2bc4144ad29cdfad45f822,
         type: 3}
       propertyPath: m_Name
