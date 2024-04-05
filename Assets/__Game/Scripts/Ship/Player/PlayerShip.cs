@@ -5,20 +5,20 @@ using UnityEngine;
 
 namespace SpaceshipVsAsteroids.Ship
 {
-  public class PlayerShip : MonoBehaviour, IDamageable
+  public class PlayerShip : ShipBase, IDamageable
   {
     public event Action PlayerDead;
 
-    [SerializeField] private int health = 1000;
-
-    [Space]
-    [SerializeField] private int collisionDamage = 100;
-
-    private int _currentHealth;
-
-    private void Start()
+    protected override void Start()
     {
-      _currentHealth = health;
+      base.Start();
+    }
+
+    protected override void OnHealthReduced()
+    {
+      base.OnHealthReduced();
+
+      EventManager.RaisePlayerDamaged();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -29,25 +29,16 @@ namespace SpaceshipVsAsteroids.Ship
       }
     }
 
-    public void Damage(int damage)
+    public override void Damage(int damage)
     {
-      _currentHealth -= damage;
+      base.Damage(damage);
 
-      EventManager.RaisePlayerDamaged();
-
-      if (_currentHealth <= 0)
+      if (currentHealth <= 0)
       {
-        _currentHealth = 0;
-
         PlayerDead?.Invoke();
 
-        DestroyShip();
+        Destroy(gameObject);
       }
-    }
-
-    private void DestroyShip()
-    {
-      Destroy(gameObject);
     }
   }
 }

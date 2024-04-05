@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6117509954213980063}
   - component: {fileID: 5017454889231113684}
-  - component: {fileID: 8065347846215201387}
+  - component: {fileID: 6664591554255133868}
   - component: {fileID: 8081359936832505034}
   - component: {fileID: 2459226466747140984}
+  - component: {fileID: 1909260540807808557}
   m_Layer: 0
   m_Name: Crystal_Med_A_01
   m_TagString: Untagged
@@ -63,7 +64,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &8065347846215201387
+--- !u!64 &6664591554255133868
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,7 +85,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: 8aa74b731db858f4b844ef82d270a2a3, type: 2}
+  m_Mesh: {fileID: 4300000, guid: 6c29f85b47c06194c8eec3265bc99c61, type: 2}
 --- !u!114 &8081359936832505034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,6 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd974e70f213ec42acc5b51f465f4ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  armorValue: 50
+  armorApplyingDelay: 0.35
 --- !u!114 &2459226466747140984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,6 +116,20 @@ MonoBehaviour:
   maxMovementSpeed: 20
   minRotationSpeed: 0.1
   maxRotationSpeed: 0.5
+--- !u!114 &1909260540807808557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6005747557350679629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab0d0989c195da349bcbbbd293d48107, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DestroyVFX: {fileID: 4414347565083969854, guid: b3fa786f038ee0a449a56ded72feaca3,
+    type: 3}
 --- !u!1001 &4026616784071649850
 PrefabInstance:
   m_ObjectHideFlags: 0
