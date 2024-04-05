@@ -1407,8 +1407,8 @@ MonoBehaviour:
   increasedAsteroidSpawnInterval: 0.25
   intervalIncreaseTime: 100
   intervalIncreaseMultiplier: 0.01
-  minCrystalSpawnInterval: 7.5
-  maxCrystalSpawnInterval: 15
+  minCrystalSpawnInterval: 15
+  maxCrystalSpawnInterval: 25
   flyingPropTarget: {fileID: 2254333591960346855}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
