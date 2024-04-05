@@ -4,12 +4,12 @@ namespace SpaceshipVsAsteroids.Ship
 {
   public class ShipBase : MonoBehaviour
   {
-    [SerializeField] protected int maxHealth = 500;
-    [SerializeField] protected float maxArmor = 100;
-    [SerializeField] protected int collisionDamage = 100;
+    [field: SerializeField] public int MaxHealth { get; private set; } = 500;
+    [field: SerializeField] public int MaxArmor { get; private set; } = 100;
+    [field: SerializeField] public int CollisionDamage { get; private set; } = 100;
 
     protected int currentHealth;
-    protected float currentArmor;
+    protected int currentArmor;
 
     protected virtual void Start()
     {
@@ -18,23 +18,18 @@ namespace SpaceshipVsAsteroids.Ship
 
     protected void InitializeStats()
     {
-      currentHealth = maxHealth;
-      currentArmor = maxArmor;
-    }
-
-    public void IncreaseArmor(int armorValue)
-    {
-      currentArmor += armorValue;
-      currentArmor = Mathf.Clamp(currentArmor, 0, maxArmor);
+      currentHealth = MaxHealth;
+      currentArmor = MaxArmor;
     }
 
     public virtual void Damage(int damage)
     {
       int healthBeforeDamage = currentHealth;
+      int armorBeforeDamage = currentArmor;
 
       if (currentArmor > 0)
       {
-        int remainingDamage = Mathf.Max(damage - (int)currentArmor, 0);
+        int remainingDamage = Mathf.Max(damage - currentArmor, 0);
 
         currentArmor = Mathf.Max(currentArmor - damage, 0);
         currentHealth -= remainingDamage;
@@ -52,8 +47,28 @@ namespace SpaceshipVsAsteroids.Ship
       {
         OnHealthReduced();
       }
+
+      if (armorBeforeDamage != currentArmor)
+      {
+        OnArmorChanged(currentArmor);
+      }
     }
 
     protected virtual void OnHealthReduced() { }
+
+    protected virtual void OnArmorChanged(int armorValue) { }
+
+    public virtual void IncreaseArmor(int armorValue)
+    {
+      int previousArmor = currentArmor;
+
+      currentArmor += armorValue;
+      currentArmor = Mathf.Clamp(currentArmor, 0, MaxArmor);
+
+      if (previousArmor != currentArmor)
+      {
+        OnArmorChanged(currentArmor);
+      }
+    }
   }
 }

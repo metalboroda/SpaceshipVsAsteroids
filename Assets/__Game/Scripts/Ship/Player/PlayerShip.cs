@@ -1,14 +1,11 @@
 using SpaceshipVsAsteroids.Interfaces;
 using SpaceshipVsAsteroids.Managers;
-using System;
 using UnityEngine;
 
 namespace SpaceshipVsAsteroids.Ship
 {
   public class PlayerShip : ShipBase, IDamageable
   {
-    public event Action PlayerDead;
-
     protected override void Start()
     {
       base.Start();
@@ -21,11 +18,18 @@ namespace SpaceshipVsAsteroids.Ship
       EventManager.RaisePlayerDamaged();
     }
 
+    protected override void OnArmorChanged(int armorValue)
+    {
+      base.OnArmorChanged(armorValue);
+
+      EventManager.RaisePlayerArmorChanged(armorValue);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
       if (other.TryGetComponent(out IDamageable damageable))
       {
-        damageable.Damage(collisionDamage);
+        damageable.Damage(CollisionDamage);
       }
     }
 
@@ -33,12 +37,19 @@ namespace SpaceshipVsAsteroids.Ship
     {
       base.Damage(damage);
 
+      EventManager.RaisePlayerHealthChanged(currentHealth);
+
       if (currentHealth <= 0)
       {
-        PlayerDead?.Invoke();
+        EventManager.RaisePlayerDead();
 
         Destroy(gameObject);
       }
+    }
+
+    public override void IncreaseArmor(int armorValue)
+    {
+      base.IncreaseArmor(armorValue);
     }
   }
 }

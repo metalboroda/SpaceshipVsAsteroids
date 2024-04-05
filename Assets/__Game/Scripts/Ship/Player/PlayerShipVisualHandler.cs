@@ -16,14 +16,14 @@ namespace SpaceshipVsAsteroids.Ship
 
     protected override void SubscribeEvents()
     {
-      Target.PlayerDead += SpawnDestroyVFX;
       EventManager.PlayerDamaged += DamageVignetteAnimation;
+      EventManager.PlayerDead += SpawnDestroyVFX;
     }
 
     protected override void UnsubscribeEvents()
     {
-      Target.PlayerDead -= SpawnDestroyVFX;
       EventManager.PlayerDamaged -= DamageVignetteAnimation;
+      EventManager.PlayerDead -= SpawnDestroyVFX;
     }
 
     private void DamageVignetteAnimation()
