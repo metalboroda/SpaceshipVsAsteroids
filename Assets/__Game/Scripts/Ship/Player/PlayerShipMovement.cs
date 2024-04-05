@@ -6,6 +6,7 @@ namespace SpaceshipVsAsteroids.Ship
   public class PlayerShipMovement : MonoBehaviour
   {
     [SerializeField] private float movementForce = 75f;
+    [SerializeField] private float maxVelocity;
     [SerializeField] private float rotationMultiplier = 50f;
     [SerializeField] private float rotationDuration = 0.15f;
 
@@ -32,6 +33,7 @@ namespace SpaceshipVsAsteroids.Ship
     private void FixedUpdate()
     {
       RestrictToBounds();
+      LimitVelocity();
 
       _shipMovement.MovementRb(movementForce, _inputHandler.GetInput());
       _shipMovement.RotateShipZ(
@@ -47,6 +49,14 @@ namespace SpaceshipVsAsteroids.Ship
       Vector3 worldPos = _mainCamera.ViewportToWorldPoint(viewPos);
 
       _rb.position = new Vector3(worldPos.x, _rb.position.y, _rb.position.z);
+    }
+
+    private void LimitVelocity()
+    {
+      if (_rb.velocity.magnitude > maxVelocity)
+      {
+        _rb.velocity = _rb.velocity.normalized * maxVelocity;
+      }
     }
   }
 }

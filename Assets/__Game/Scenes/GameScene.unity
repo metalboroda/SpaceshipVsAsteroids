@@ -1403,7 +1403,10 @@ MonoBehaviour:
   - {fileID: 3400638722668212847, guid: 9251d234df85bd44d9975b1d2dc9bab9, type: 3}
   crystalsToSpawn:
   - {fileID: 6005747557350679629, guid: 91ae7f9a8ffe8a048bb2cb2bafc3acbe, type: 3}
-  asteroidSpawnInterval: 1.25
+  initialAsteroidSpawnInterval: 1.5
+  increasedAsteroidSpawnInterval: 0.25
+  intervalIncreaseTime: 100
+  intervalIncreaseMultiplier: 0.01
   minCrystalSpawnInterval: 7.5
   maxCrystalSpawnInterval: 15
   flyingPropTarget: {fileID: 2254333591960346855}
