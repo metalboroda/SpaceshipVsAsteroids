@@ -9,27 +9,39 @@ namespace SpaceshipVsAsteroids.Ship
   public class PlayerShipVisualHandler : ObjectVisualHandlerBase<PlayerShip>
   {
     [Header("Damage Vignette")]
-    [SerializeField] private Image vignetteImage;
+    [SerializeField] private Image damageVignetteImage;
+
+    [Header("Armor Vignette")]
+    [SerializeField] private Image armorVignetteImage;
+
     [Space]
-    [SerializeField] private float damageDuration = 0.5f;
+    [SerializeField] private float vignetteDuration = 0.25f;
     [SerializeField] private float vignetteTargetAlpha = 0.05f;
 
     protected override void SubscribeEvents()
     {
+      EventManager.OnArmorReceived += ArmorVignetteAnimation;
       EventManager.PlayerDamaged += DamageVignetteAnimation;
       EventManager.PlayerDead += SpawnDestroyVFX;
     }
 
     protected override void UnsubscribeEvents()
     {
+      EventManager.OnArmorReceived -= ArmorVignetteAnimation;
       EventManager.PlayerDamaged -= DamageVignetteAnimation;
       EventManager.PlayerDead -= SpawnDestroyVFX;
     }
 
     private void DamageVignetteAnimation()
     {
-      vignetteImage.DOFade(vignetteTargetAlpha, damageDuration / 2)
-          .OnComplete(() => vignetteImage.DOFade(0f, damageDuration / 2));
+      damageVignetteImage.DOFade(vignetteTargetAlpha, vignetteDuration / 2)
+          .OnComplete(() => damageVignetteImage.DOFade(0f, vignetteDuration / 2));
+    }
+
+    private void ArmorVignetteAnimation()
+    {
+      armorVignetteImage.DOFade(vignetteTargetAlpha, vignetteDuration / 2)
+          .OnComplete(() => armorVignetteImage.DOFade(0f, vignetteDuration / 2));
     }
   }
 }

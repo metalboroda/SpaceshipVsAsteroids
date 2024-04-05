@@ -37,9 +37,9 @@ namespace SpaceshipVsAsteroids.Ship
     {
       base.Damage(damage);
 
-      EventManager.RaisePlayerHealthChanged(currentHealth);
+      EventManager.RaisePlayerHealthChanged(CurrentHealth);
 
-      if (currentHealth <= 0)
+      if (CurrentHealth <= 0)
       {
         EventManager.RaisePlayerDead();
 
@@ -50,6 +50,11 @@ namespace SpaceshipVsAsteroids.Ship
     public override void IncreaseArmor(int armorValue)
     {
       base.IncreaseArmor(armorValue);
+
+      if (CurrentArmor < MaxArmor)
+      {
+        EventManager.RaiseArmorReceived();
+      }
     }
   }
 }

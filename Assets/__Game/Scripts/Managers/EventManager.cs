@@ -11,6 +11,9 @@ namespace SpaceshipVsAsteroids.Managers
     public static event UnityAction<int> PlayerHealthChanged;
     public static void RaisePlayerHealthChanged(int health) => PlayerHealthChanged?.Invoke(health);
 
+    public static event UnityAction OnArmorReceived;
+    public static void RaiseArmorReceived() => OnArmorReceived?.Invoke();
+
     public static event UnityAction<int> PlayerArmorChanged;
     public static void RaisePlayerArmorChanged(int armor) => PlayerArmorChanged?.Invoke(armor);
 

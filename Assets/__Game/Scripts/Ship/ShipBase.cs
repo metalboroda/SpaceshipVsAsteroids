@@ -8,8 +8,8 @@ namespace SpaceshipVsAsteroids.Ship
     [field: SerializeField] public int MaxArmor { get; private set; } = 100;
     [field: SerializeField] public int CollisionDamage { get; private set; } = 100;
 
-    protected int currentHealth;
-    protected int currentArmor;
+    protected int CurrentHealth;
+    protected int CurrentArmor;
 
     protected virtual void Start()
     {
@@ -18,39 +18,39 @@ namespace SpaceshipVsAsteroids.Ship
 
     protected void InitializeStats()
     {
-      currentHealth = MaxHealth;
-      currentArmor = MaxArmor;
+      CurrentHealth = MaxHealth;
+      CurrentArmor = MaxArmor;
     }
 
     public virtual void Damage(int damage)
     {
-      int healthBeforeDamage = currentHealth;
-      int armorBeforeDamage = currentArmor;
+      int healthBeforeDamage = CurrentHealth;
+      int armorBeforeDamage = CurrentArmor;
 
-      if (currentArmor > 0)
+      if (CurrentArmor > 0)
       {
-        int remainingDamage = Mathf.Max(damage - currentArmor, 0);
+        int remainingDamage = Mathf.Max(damage - CurrentArmor, 0);
 
-        currentArmor = Mathf.Max(currentArmor - damage, 0);
-        currentHealth -= remainingDamage;
+        CurrentArmor = Mathf.Max(CurrentArmor - damage, 0);
+        CurrentHealth -= remainingDamage;
       }
       else
       {
-        currentHealth -= damage;
+        CurrentHealth -= damage;
       }
 
-      if (currentHealth <= 0 && healthBeforeDamage > 0)
+      if (CurrentHealth <= 0 && healthBeforeDamage > 0)
       {
-        currentHealth = 0;
+        CurrentHealth = 0;
       }
-      else if (currentHealth < healthBeforeDamage)
+      else if (CurrentHealth < healthBeforeDamage)
       {
         OnHealthReduced();
       }
 
-      if (armorBeforeDamage != currentArmor)
+      if (armorBeforeDamage != CurrentArmor)
       {
-        OnArmorChanged(currentArmor);
+        OnArmorChanged(CurrentArmor);
       }
     }
 
@@ -60,14 +60,14 @@ namespace SpaceshipVsAsteroids.Ship
 
     public virtual void IncreaseArmor(int armorValue)
     {
-      int previousArmor = currentArmor;
+      int previousArmor = CurrentArmor;
 
-      currentArmor += armorValue;
-      currentArmor = Mathf.Clamp(currentArmor, 0, MaxArmor);
+      CurrentArmor += armorValue;
+      CurrentArmor = Mathf.Clamp(CurrentArmor, 0, MaxArmor);
 
-      if (previousArmor != currentArmor)
+      if (previousArmor != CurrentArmor)
       {
-        OnArmorChanged(currentArmor);
+        OnArmorChanged(CurrentArmor);
       }
     }
   }
