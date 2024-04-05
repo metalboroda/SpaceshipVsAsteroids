@@ -5,6 +5,10 @@ namespace SpaceshipVsAsteroids.Managers
 {
   public class CameraManager : MonoBehaviour
   {
+    [Header("Player Camera Param's")]
+    [SerializeField] private Vector3 damagePunchVector = new Vector3(0, 1, 0);
+    [SerializeField] private float damagePunchDuration = 0.25f;
+
     private Camera _mainCamera;
 
     private void Awake()
@@ -24,7 +28,7 @@ namespace SpaceshipVsAsteroids.Managers
 
     private void CameraPunchRotation()
     {
-      _mainCamera.transform.DOPunchRotation(new Vector3(0, 1, 0), 0.25f, 50, 1).SetEase(Ease.OutSine);
+      _mainCamera.transform.DOPunchRotation(damagePunchVector, damagePunchDuration, 50, 1).SetEase(Ease.OutSine);
     }
   }
 }
