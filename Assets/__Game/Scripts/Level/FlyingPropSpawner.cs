@@ -29,11 +29,16 @@ namespace SpaceshipVsAsteroids.Level
     private void Start()
     {
       _currentAsteroidSpawnInterval = initialAsteroidSpawnInterval;
+
       StartCoroutine(SpawnWithInterval(
           _currentAsteroidSpawnInterval, asteroidsToSpawn, SpawnObject));
-      StartCoroutine(SpawnWithInterval(
-          Random.Range(minCrystalSpawnInterval, maxCrystalSpawnInterval), crystalsToSpawn, SpawnObject));
-      StartAsteroidIntervalIncrease();
+
+      if (crystalsToSpawn.Count > 0)
+      {
+        StartCoroutine(SpawnWithInterval(
+                  Random.Range(minCrystalSpawnInterval, maxCrystalSpawnInterval), crystalsToSpawn, SpawnObject));
+        StartAsteroidIntervalIncrease();
+      }
     }
 
     private void StartAsteroidIntervalIncrease()
@@ -64,6 +69,7 @@ namespace SpaceshipVsAsteroids.Level
         yield return new WaitForSeconds(interval);
 
         GameObject objectPrefab = GetRandomObject(objectsToSpawn);
+
         if (objectPrefab != null)
         {
           spawnAction.Invoke(objectPrefab);
