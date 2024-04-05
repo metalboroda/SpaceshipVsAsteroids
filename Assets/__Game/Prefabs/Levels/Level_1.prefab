@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f2b00f313f21047b6ea6c8da283c56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 0.01
+  scrollSpeed: 0.015
   backgroundImage: {fileID: 5261529267389403508}
 --- !u!1 &7542934334741706853
 GameObject:
@@ -510,7 +510,7 @@ MonoBehaviour:
   - {fileID: 354340783050188026, guid: 6f7a8feea4039cf4499198215ee14d2d, type: 3}
   - {fileID: 6787666625644167087, guid: 3e5df1d2ebee50740a2b091e39c82f5a, type: 3}
   - {fileID: 3400638722668212847, guid: 9251d234df85bd44d9975b1d2dc9bab9, type: 3}
-  spawnInterval: 2
+  spawnInterval: 1.25
   asteroidsTarget: {fileID: 8614049876300066825}
 --- !u!1001 &2579112503230570492
 PrefabInstance:
