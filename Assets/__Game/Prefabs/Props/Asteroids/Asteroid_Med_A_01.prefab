@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4798930045938813881}
   - component: {fileID: 9122195996405217448}
   - component: {fileID: 3276656867457059324}
-  - component: {fileID: -8633128158201229615}
+  - component: {fileID: 6813195795727366861}
   - component: {fileID: 5337334076341394975}
   m_Layer: 0
   m_Name: Asteroid_Med_A_01
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 75
   collisionDamage: 50
---- !u!114 &-8633128158201229615
+--- !u!114 &6813195795727366861
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,13 +109,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 354340783050188026}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 431a957c1c2839443b0967c2d39b4a86, type: 3}
+  m_Script: {fileID: 11500000, guid: c4fc658ef222c3e42a1b0c152319b565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   minMovementSpeed: 10
   maxMovementSpeed: 15
-  minRotationSpeed: 0.05
-  maxRotationSpeed: 0.3
+  minRotationSpeed: 0.1
+  maxRotationSpeed: 0.5
 --- !u!114 &5337334076341394975
 MonoBehaviour:
   m_ObjectHideFlags: 0

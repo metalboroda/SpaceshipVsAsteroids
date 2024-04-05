@@ -39,13 +39,8 @@ namespace SpaceshipVsAsteroids.Props
 
         AsteroidDestroyed?.Invoke();
 
-        DespawnAsteroid();
+        LeanPool.Despawn(gameObject);
       }
-    }
-
-    public void DespawnAsteroid()
-    {
-      LeanPool.Despawn(gameObject);
     }
   }
 }

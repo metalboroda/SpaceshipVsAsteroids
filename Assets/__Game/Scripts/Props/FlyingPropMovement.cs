@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using Lean.Pool;
+using UnityEngine;
 
 namespace SpaceshipVsAsteroids.Props
 {
-  public class AsteroidMovement : MonoBehaviour
+  public class FlyingPropMovement : MonoBehaviour
   {
     [SerializeField] private float minMovementSpeed;
     [SerializeField] private float maxMovementSpeed;
@@ -37,7 +38,7 @@ namespace SpaceshipVsAsteroids.Props
 
       if (transform.position == _moveTarget)
       {
-        _asteroid.DespawnAsteroid();
+        LeanPool.Despawn(gameObject);
       }
     }
 

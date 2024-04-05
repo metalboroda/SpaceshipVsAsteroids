@@ -937,7 +937,7 @@ GameObject:
   - component: {fileID: 5167705700565142432}
   - component: {fileID: 7336018180002954693}
   m_Layer: 0
-  m_Name: AsteroidsSpawner
+  m_Name: FlyingPropSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1010,7 +1010,7 @@ GameObject:
   - component: {fileID: 4999486136317874742}
   - component: {fileID: 6560838626992055570}
   m_Layer: 0
-  m_Name: AsteroidsTarget
+  m_Name: FlyingPropTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1102,7 +1102,7 @@ PrefabInstance:
     - target: {fileID: 738541918196956152, guid: d1375d81a8dd42f458c812b9cca6a640,
         type: 3}
       propertyPath: m_Name
-      value: AsteroidsPool
+      value: PropsPool
       objectReference: {fileID: 0}
     - target: {fileID: 1288085126976182515, guid: d1375d81a8dd42f458c812b9cca6a640,
         type: 3}
@@ -1368,8 +1368,12 @@ MonoBehaviour:
   - {fileID: 354340783050188026, guid: 6f7a8feea4039cf4499198215ee14d2d, type: 3}
   - {fileID: 6787666625644167087, guid: 3e5df1d2ebee50740a2b091e39c82f5a, type: 3}
   - {fileID: 3400638722668212847, guid: 9251d234df85bd44d9975b1d2dc9bab9, type: 3}
-  spawnInterval: 1.25
-  asteroidsTarget: {fileID: 2254333591960346855}
+  crystalsToSpawn:
+  - {fileID: 6005747557350679629, guid: 91ae7f9a8ffe8a048bb2cb2bafc3acbe, type: 3}
+  asteroidSpawnInterval: 2
+  minCrystalSpawnInterval: 7.5
+  maxCrystalSpawnInterval: 15
+  flyingPropTarget: {fileID: 2254333591960346855}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

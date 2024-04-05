@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -8713761640849686581}
   - component: {fileID: 8727433854686586917}
   - component: {fileID: 2686323110531083018}
-  - component: {fileID: -4123178832468935058}
+  - component: {fileID: -3692425302679206774}
   - component: {fileID: 4736926714303004921}
   m_Layer: 0
   m_Name: Asteroid_Sml_A_01
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 50
   collisionDamage: 25
---- !u!114 &-4123178832468935058
+--- !u!114 &-3692425302679206774
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,13 +109,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6787666625644167087}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 431a957c1c2839443b0967c2d39b4a86, type: 3}
+  m_Script: {fileID: 11500000, guid: c4fc658ef222c3e42a1b0c152319b565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   minMovementSpeed: 10
   maxMovementSpeed: 15
-  minRotationSpeed: 0.05
-  maxRotationSpeed: 0.3
+  minRotationSpeed: 0.1
+  maxRotationSpeed: 0.5
 --- !u!114 &4736926714303004921
 MonoBehaviour:
   m_ObjectHideFlags: 0

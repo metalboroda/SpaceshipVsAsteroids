@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9027844644820639264}
   - component: {fileID: 4059607943625160109}
   - component: {fileID: 6854390332903053283}
-  - component: {fileID: 187436812203984509}
+  - component: {fileID: 7253388074078384368}
   - component: {fileID: 2649249300958763282}
   m_Layer: 0
   m_Name: Asteroid_Lrg_B_01
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   collisionDamage: 100
---- !u!114 &187436812203984509
+--- !u!114 &7253388074078384368
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,13 +109,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7373489389562177403}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 431a957c1c2839443b0967c2d39b4a86, type: 3}
+  m_Script: {fileID: 11500000, guid: c4fc658ef222c3e42a1b0c152319b565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   minMovementSpeed: 10
   maxMovementSpeed: 15
-  minRotationSpeed: 0.05
-  maxRotationSpeed: 0.3
+  minRotationSpeed: 0.1
+  maxRotationSpeed: 0.5
 --- !u!114 &2649249300958763282
 MonoBehaviour:
   m_ObjectHideFlags: 0
