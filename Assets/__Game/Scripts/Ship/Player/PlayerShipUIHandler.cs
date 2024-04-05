@@ -1,4 +1,3 @@
-using SpaceshipVsAsteroids.Interfaces;
 using SpaceshipVsAsteroids.Managers;
 using UnityEngine;
 using UnityEngine.UI;
