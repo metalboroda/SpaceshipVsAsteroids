@@ -1,4 +1,5 @@
 using SpaceshipVsAsteroids.Interfaces;
+using SpaceshipVsAsteroids.Managers;
 using System;
 using UnityEngine;
 
@@ -31,6 +32,8 @@ namespace SpaceshipVsAsteroids.Ship
     public void Damage(int damage)
     {
       _currentHealth -= damage;
+
+      EventManager.RaisePlayerDamaged();
 
       if (_currentHealth <= 0)
       {
