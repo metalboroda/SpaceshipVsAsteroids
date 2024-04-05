@@ -106,10 +106,10 @@ MonoBehaviour:
   categories: []
   uiBounds:
     serializedVersion: 2
-    x: 563
-    y: -252
-    width: 3261
-    height: 2092
+    x: 0
+    y: -192
+    width: 3798
+    height: 2006
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2424,7 +2424,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":14.09919548034668,"y":1.8823528289794922,"z":23.968629837036134}'
+      m_SerializableObject: '{"x":32.0,"y":0.0,"z":0.33507850766181948}'
     m_Space: 2147483647
   m_Property:
     name: Color
@@ -4256,7 +4256,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":14.09919548034668,"y":1.8823529481887818,"z":23.968629837036134}'
+      m_SerializableObject: '{"x":32.0,"y":0.0,"z":0.33507850766181948}'
     m_Space: 2147483647
   m_Property:
     name: Color
@@ -6798,7 +6798,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":14.09919548034668,"y":1.8823529481887818,"z":23.968629837036134}'
+      m_SerializableObject: '{"x":32.0,"y":0.0,"z":0.33507850766181948}'
     m_Space: 2147483647
   m_Property:
     name: Color
