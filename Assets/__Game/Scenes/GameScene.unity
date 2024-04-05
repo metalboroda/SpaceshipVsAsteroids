@@ -487,7 +487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f2b00f313f21047b6ea6c8da283c56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -0.05
+  scrollSpeed: -0.075
 --- !u!1 &540563080
 GameObject:
   m_ObjectHideFlags: 0
@@ -1403,7 +1403,7 @@ MonoBehaviour:
   - {fileID: 3400638722668212847, guid: 9251d234df85bd44d9975b1d2dc9bab9, type: 3}
   crystalsToSpawn:
   - {fileID: 6005747557350679629, guid: 91ae7f9a8ffe8a048bb2cb2bafc3acbe, type: 3}
-  asteroidSpawnInterval: 2
+  asteroidSpawnInterval: 1.25
   minCrystalSpawnInterval: 7.5
   maxCrystalSpawnInterval: 15
   flyingPropTarget: {fileID: 2254333591960346855}

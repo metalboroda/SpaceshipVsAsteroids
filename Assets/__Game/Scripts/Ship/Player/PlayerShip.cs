@@ -51,10 +51,7 @@ namespace SpaceshipVsAsteroids.Ship
     {
       base.IncreaseArmor(armorValue);
 
-      if (CurrentArmor < MaxArmor)
-      {
-        EventManager.RaiseArmorReceived();
-      }
+      EventManager.RaiseArmorReceived();
     }
   }
 }
