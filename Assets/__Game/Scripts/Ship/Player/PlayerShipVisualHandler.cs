@@ -18,30 +18,59 @@ namespace SpaceshipVsAsteroids.Ship
     [SerializeField] private float vignetteDuration = 0.25f;
     [SerializeField] private float vignetteTargetAlpha = 0.05f;
 
+    [Header("Armor Outline")]
+    [SerializeField] private float maxOutlineValue = 1.05f;
+
+    private Material _armorMaterial;
+    private Renderer _renderer;
+
+    protected override void Awake()
+    {
+      SetArmorMaterial();
+    }
+
     protected override void SubscribeEvents()
     {
-      EventManager.OnArmorReceived += ArmorVignetteAnimation;
-      EventManager.PlayerDamaged += DamageVignetteAnimation;
+      EventManager.OnArmorReceived += () => VignetteAnimation(armorVignetteImage);
+      EventManager.PlayerArmorChanged += SwitchArmorOutline;
+      EventManager.PlayerDamaged += () => VignetteAnimation(damageVignetteImage);
       EventManager.PlayerDead += SpawnDestroyVFX;
     }
 
     protected override void UnsubscribeEvents()
     {
-      EventManager.OnArmorReceived -= ArmorVignetteAnimation;
-      EventManager.PlayerDamaged -= DamageVignetteAnimation;
+      EventManager.OnArmorReceived -= () => VignetteAnimation(armorVignetteImage);
+      EventManager.PlayerArmorChanged -= SwitchArmorOutline;
+      EventManager.PlayerDamaged -= () => VignetteAnimation(damageVignetteImage);
       EventManager.PlayerDead -= SpawnDestroyVFX;
     }
 
-    private void DamageVignetteAnimation()
+    private void SetArmorMaterial()
     {
-      damageVignetteImage.DOFade(vignetteTargetAlpha, vignetteDuration / 2)
-          .OnComplete(() => damageVignetteImage.DOFade(0f, vignetteDuration / 2));
+      _renderer = GetComponentInChildren<Renderer>();
+
+      Material[] materials = _renderer.materials;
+
+      foreach (Material material in materials)
+      {
+        if (material.name == "Outline_Blue (Instance)")
+        {
+          _armorMaterial = material;
+
+          break;
+        }
+      }
     }
 
-    private void ArmorVignetteAnimation()
+    private void VignetteAnimation(Image vignetteImage)
     {
-      armorVignetteImage.DOFade(vignetteTargetAlpha, vignetteDuration / 2)
-          .OnComplete(() => armorVignetteImage.DOFade(0f, vignetteDuration / 2));
+      vignetteImage.DOFade(vignetteTargetAlpha, vignetteDuration / 2)
+                  .OnComplete(() => vignetteImage.DOFade(0f, vignetteDuration / 2));
+    }
+
+    private void SwitchArmorOutline(int armor)
+    {
+      _armorMaterial.SetFloat("_Scale", armor > 0 ? maxOutlineValue : 0f);
     }
   }
 }

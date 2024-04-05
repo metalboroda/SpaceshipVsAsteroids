@@ -427,6 +427,7 @@ MonoBehaviour:
   armorVignetteImage: {fileID: 6022190051719208605}
   vignetteDuration: 0.25
   vignetteTargetAlpha: 0.03
+  maxOutlineValue: 1.05
 --- !u!114 &5087850650165499890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1072,6 +1073,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8814070623778829590}
     m_Modifications:
+    - target: {fileID: 145463171616553744, guid: 21b471887873bf04aa486f9dd5f0cd62,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 145463171616553744, guid: 21b471887873bf04aa486f9dd5f0cd62,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3c934aa1ea1fefe4f89906a248024a5c, type: 2}
     - target: {fileID: 1319525172784709759, guid: 21b471887873bf04aa486f9dd5f0cd62,
         type: 3}
       propertyPath: m_LocalPosition.x

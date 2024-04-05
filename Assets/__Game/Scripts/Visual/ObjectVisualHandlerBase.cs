@@ -14,6 +14,8 @@ namespace SpaceshipVsAsteroids.Visual
       Target = GetComponent<T>();
     }
 
+    protected virtual void Start() { }
+
     protected virtual void OnEnable()
     {
       SubscribeEvents();
@@ -25,7 +27,7 @@ namespace SpaceshipVsAsteroids.Visual
     }
 
     protected abstract void SubscribeEvents();
-    protected abstract void UnsubscribeEvents(); 
+    protected abstract void UnsubscribeEvents();
 
     protected virtual void SpawnDestroyVFX()
     {
