@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4120505952094716259}
   - component: {fileID: 1907496705748331519}
   - component: {fileID: 3258833767411300665}
+  - component: {fileID: 9193826571383534129}
   - component: {fileID: 7173763664308300953}
   - component: {fileID: 7463669029216898022}
   - component: {fileID: 446396294120638699}
@@ -50,7 +51,7 @@ Rigidbody:
   m_GameObject: {fileID: 3016761292707676803}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 2
+  m_Drag: 3
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -80,7 +81,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aaba9c13a6af9746bdbe9cfd5a336a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipSO: {fileID: 11400000, guid: 55bd8be8952c588498f2491efa61a79c, type: 2}
+  health: 1000
+  collisionDamage: 100
 --- !u!114 &1907496705748331519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,8 +107,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74cc68307c40269439c115d2a1a97258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipSO: {fileID: 11400000, guid: 55bd8be8952c588498f2491efa61a79c, type: 2}
+  movementForce: 100
+  rotationMultiplier: 40
+  rotationDuration: 0.25
   shipModel: {fileID: 3016761292707676803}
+--- !u!114 &9193826571383534129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3016761292707676803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b690ed9420fbda642949940d528999ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyVFX: {fileID: 763501961395798022, guid: f3b4c054082a4494ab365cc42ba9922c,
+    type: 3}
 --- !u!64 &7173763664308300953
 MeshCollider:
   m_ObjectHideFlags: 0

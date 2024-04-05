@@ -1,36 +1,43 @@
 using Lean.Pool;
 using SpaceshipVsAsteroids.Interfaces;
-using SpaceshipVsAsteroids.SOs;
+using System;
 using UnityEngine;
 
 namespace SpaceshipVsAsteroids.Props
 {
   public class Asteroid : MonoBehaviour, IDamageable
   {
-    [SerializeField] private AsteroidSO asteroidSO;
+    public event Action AsteroidDestroyed;
 
-    private int _health;
+    [SerializeField] private int health = 100;
+
+    [Space]
+    [SerializeField] private int collisionDamage = 100;
+
+    private int _currentHealth;
 
     private void Start()
     {
-      _health = asteroidSO.Health;
+      _currentHealth = health;
     }
 
     private void OnTriggerEnter(Collider other)
     {
       if (other.TryGetComponent(out IDamageable damageable))
       {
-        damageable.Damage(asteroidSO.CollisionDamaged);
+        damageable.Damage(collisionDamage);
       }
     }
 
     public void Damage(int damage)
     {
-      _health -= damage;
+      _currentHealth -= damage;
 
-      if (_health <= 0)
+      if (_currentHealth <= 0)
       {
-        _health = 0;
+        _currentHealth = 0;
+
+        AsteroidDestroyed?.Invoke();
 
         DespawnAsteroid();
       }

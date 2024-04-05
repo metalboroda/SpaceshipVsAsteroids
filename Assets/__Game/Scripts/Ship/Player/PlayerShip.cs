@@ -1,35 +1,42 @@
 using SpaceshipVsAsteroids.Interfaces;
-using SpaceshipVsAsteroids.SOs;
+using System;
 using UnityEngine;
 
 namespace SpaceshipVsAsteroids.Ship
 {
   public class PlayerShip : MonoBehaviour, IDamageable
   {
-    [SerializeField] private ShipSO shipSO;
+    public event Action PlayerDead;
 
-    private int _health;
+    [SerializeField] private int health = 1000;
+
+    [Space]
+    [SerializeField] private int collisionDamage = 100;
+
+    private int _currentHealth;
 
     private void Start()
     {
-      _health = shipSO.Health;
+      _currentHealth = health;
     }
 
     private void OnTriggerEnter(Collider other)
     {
       if (other.TryGetComponent(out IDamageable damageable))
       {
-        damageable.Damage(shipSO.CollisionDamaged);
+        damageable.Damage(collisionDamage);
       }
     }
 
     public void Damage(int damage)
     {
-      _health -= damage;
+      _currentHealth -= damage;
 
-      if (_health <= 0)
+      if (_currentHealth <= 0)
       {
-        _health = 0;
+        _currentHealth = 0;
+
+        PlayerDead?.Invoke();
 
         DestroyShip();
       }

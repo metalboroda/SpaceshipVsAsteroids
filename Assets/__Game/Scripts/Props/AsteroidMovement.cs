@@ -1,11 +1,13 @@
-﻿using SpaceshipVsAsteroids.SOs;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace SpaceshipVsAsteroids.Props
 {
   public class AsteroidMovement : MonoBehaviour
   {
-    [SerializeField] private AsteroidSO asteroidSO;
+    [SerializeField] private float minMovementSpeed;
+    [SerializeField] private float maxMovementSpeed;
+    [SerializeField] private float minRotationSpeed;
+    [SerializeField] private float maxRotationSpeed;
 
     private Asteroid _asteroid;
     private Vector3 _moveTarget;
@@ -28,7 +30,7 @@ namespace SpaceshipVsAsteroids.Props
 
     public void MoveToTarget()
     {
-      float randomMovementSpeed = Random.Range(asteroidSO.MinMovementSpeed, asteroidSO.MaxMovementSpeed);
+      float randomMovementSpeed = Random.Range(minMovementSpeed, maxMovementSpeed);
       float step = randomMovementSpeed * Time.deltaTime;
 
       transform.position = Vector3.MoveTowards(transform.position, _moveTarget, step);
@@ -43,7 +45,7 @@ namespace SpaceshipVsAsteroids.Props
     {
       Vector3 randomRotation = new Vector3(
           Random.Range(0f, 360f), Random.Range(0f, 360f), Random.Range(0f, 360f));
-      float randomRotationSpeed = Random.Range(asteroidSO.MinRotationSpeed, asteroidSO.MaxRotationSpeed);
+      float randomRotationSpeed = Random.Range(minRotationSpeed, maxRotationSpeed);
 
       transform.Rotate(randomRotation * Time.deltaTime * randomRotationSpeed);
     }

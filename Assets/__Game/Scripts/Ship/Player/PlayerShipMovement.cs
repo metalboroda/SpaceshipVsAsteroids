@@ -1,12 +1,13 @@
 using SpaceshipVsAsteroids.Components;
-using SpaceshipVsAsteroids.SOs;
 using UnityEngine;
 
 namespace SpaceshipVsAsteroids.Ship
 {
   public class PlayerShipMovement : MonoBehaviour
   {
-    [SerializeField] private ShipSO shipSO;
+    [SerializeField] private float movementForce = 75f;
+    [SerializeField] private float rotationMultiplier = 50f;
+    [SerializeField] private float rotationDuration = 0.15f;
 
     [Space]
     [SerializeField] private GameObject shipModel;
@@ -32,9 +33,9 @@ namespace SpaceshipVsAsteroids.Ship
     {
       RestrictToBounds();
 
-      _shipMovement.MovementRb(shipSO.MovementForce, _inputHandler.GetInput());
+      _shipMovement.MovementRb(movementForce, _inputHandler.GetInput());
       _shipMovement.RotateShipZ(
-        shipSO.RotationMultiplier, shipSO.RotationDuration, _inputHandler.GetInput());
+        rotationMultiplier, rotationDuration, _inputHandler.GetInput());
     }
 
     public void RestrictToBounds()
