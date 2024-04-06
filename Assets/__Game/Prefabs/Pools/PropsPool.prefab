@@ -53,7 +53,7 @@ MonoBehaviour:
   prefab: {fileID: 6695769250842439350, guid: 21f92eea336bcc645a24b393274bec62, type: 3}
   notification: 3
   strategy: 0
-  preload: 5
+  preload: 0
   capacity: 5
   recycle: 1
   persist: 0
@@ -78,7 +78,7 @@ MonoBehaviour:
   prefab: {fileID: 7373489389562177403, guid: 5a84cceb1979eb144a62686b508be8a2, type: 3}
   notification: 3
   strategy: 0
-  preload: 5
+  preload: 0
   capacity: 5
   recycle: 1
   persist: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
   prefab: {fileID: 354340783050188026, guid: 6f7a8feea4039cf4499198215ee14d2d, type: 3}
   notification: 3
   strategy: 0
-  preload: 5
+  preload: 0
   capacity: 5
   recycle: 1
   persist: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
   prefab: {fileID: 6787666625644167087, guid: 3e5df1d2ebee50740a2b091e39c82f5a, type: 3}
   notification: 3
   strategy: 0
-  preload: 5
+  preload: 0
   capacity: 5
   recycle: 1
   persist: 0
@@ -153,7 +153,7 @@ MonoBehaviour:
   prefab: {fileID: 3400638722668212847, guid: 9251d234df85bd44d9975b1d2dc9bab9, type: 3}
   notification: 3
   strategy: 0
-  preload: 5
+  preload: 0
   capacity: 5
   recycle: 1
   persist: 0
@@ -178,7 +178,7 @@ MonoBehaviour:
   prefab: {fileID: 6005747557350679629, guid: 91ae7f9a8ffe8a048bb2cb2bafc3acbe, type: 3}
   notification: 3
   strategy: 0
-  preload: 5
+  preload: 0
   capacity: 5
   recycle: 1
   persist: 0
@@ -203,7 +203,7 @@ MonoBehaviour:
   prefab: {fileID: 5903845656278578782, guid: e2ffb3e4eed06e24a86d27188066dc4c, type: 3}
   notification: 3
   strategy: 0
-  preload: 5
+  preload: 0
   capacity: 5
   recycle: 1
   persist: 0
