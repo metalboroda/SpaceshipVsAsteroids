@@ -422,8 +422,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b690ed9420fbda642949940d528999ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DestroyVFX: {fileID: 763501961395798022, guid: f3b4c054082a4494ab365cc42ba9922c,
-    type: 3}
+  DestroyVFXReference:
+    m_AssetGUID: f3b4c054082a4494ab365cc42ba9922c
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
   damageVignetteImage: {fileID: 8630325542199012284}
   armorVignetteImage: {fileID: 6022190051719208605}
   vignetteDuration: 0.25

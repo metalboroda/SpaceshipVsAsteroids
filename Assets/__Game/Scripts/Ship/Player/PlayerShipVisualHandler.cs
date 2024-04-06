@@ -21,6 +21,8 @@ namespace SpaceshipVsAsteroids.Ship
     [Header("Armor Outline")]
     [SerializeField] private float maxOutlineValue = 1.05f;
 
+    private Tween _vignetteTween;
+
     private Material _armorMaterial;
     private Renderer _renderer;
 
@@ -64,8 +66,8 @@ namespace SpaceshipVsAsteroids.Ship
 
     private void VignetteAnimation(Image vignetteImage)
     {
-      vignetteImage.DOFade(vignetteTargetAlpha, vignetteDuration / 2)
-                  .OnComplete(() => vignetteImage.DOFade(0f, vignetteDuration / 2));
+      _vignetteTween = vignetteImage.DOFade(vignetteTargetAlpha, vignetteDuration / 2)
+                   .OnComplete(() => vignetteImage.DOFade(0f, vignetteDuration / 2)).SetAutoKill(true);
     }
 
     private void SwitchArmorOutline(int armor)

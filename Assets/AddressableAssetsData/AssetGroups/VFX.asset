@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: VFX
+  m_EditorClassIdentifier: 
+  m_GroupName: VFX
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 45f7cb7590e2e6b48846694abb820125
+  m_SerializeEntries:
+  - m_GUID: 175579f801cef954a8ea0bf71e7c5972
+    m_Address: Assets/__Game/Prefabs/VFX/Explosions/Explosion_Asteroid_Small.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eb29e595eb4b84b4dbb973be0152dab0
+    m_Address: Assets/__Game/Prefabs/VFX/Explosions/Explosion_Asteroid_Medium.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0f57c4aa8c9e0a742b09014b4817fbe8
+    m_Address: Assets/__Game/Prefabs/VFX/Explosions/Explosion_Asteroid_Big.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f3b4c054082a4494ab365cc42ba9922c
+    m_Address: Assets/__Game/Prefabs/VFX/Explosions/Explosion_Ship_1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 304ccb47b75d8e54fbb9b0cfb02e21c4
+    m_Address: Assets/__Game/Prefabs/VFX/Explosions/Explosion_CollectibleCrystal_Small.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5711b07ae03e91543a09bef2ae3c2cff
+    m_Address: Assets/__Game/Prefabs/VFX/Explosions/Explosion_Base.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b3fa786f038ee0a449a56ded72feaca3
+    m_Address: Assets/__Game/Prefabs/VFX/Explosions/Explosion_ArmorCrystal_Medium.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 048d0fe4e3055c54a891f6155a23048f, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 6a5bea5a25bd14a418b7546205b15831, type: 2}
+    - {fileID: 11400000, guid: ff48bfc5eb5ac504b936433988a2722b, type: 2}
