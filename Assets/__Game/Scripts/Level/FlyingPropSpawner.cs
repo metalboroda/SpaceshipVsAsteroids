@@ -16,7 +16,6 @@ namespace SpaceshipVsAsteroids.Level
     [SerializeField] private float initialAsteroidSpawnInterval = 1.5f;
     [SerializeField] private float increasedAsteroidSpawnInterval = 0.5f;
     [SerializeField] private float intervalIncreaseTime = 500f;
-    [SerializeField] private float intervalIncreaseMultiplier = 0.01f;
 
     [SerializeField] private float minCrystalSpawnInterval = 7.5f;
     [SerializeField] private float maxCrystalSpawnInterval = 15f;

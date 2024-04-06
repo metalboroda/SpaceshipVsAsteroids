@@ -1,3 +1,4 @@
+using SpaceshipVsAsteroids.Enums;
 using SpaceshipVsAsteroids.Managers;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,6 +7,9 @@ namespace SpaceshipVsAsteroids.Ship
 {
   public class PlayerShipUIHandler : MonoBehaviour
   {
+    [SerializeField] private GameObject canvas;
+
+    [Space]
     [SerializeField] private Image healthBar;
     [SerializeField] private Image armorBar;
 
@@ -18,12 +22,14 @@ namespace SpaceshipVsAsteroids.Ship
 
     private void OnEnable()
     {
+      EventManager.GameStateChanged += SwitchCanvas;
       EventManager.PlayerHealthChanged += UpdateHealthBar;
       EventManager.PlayerArmorChanged += UpdateArmorBar;
     }
 
     private void OnDisable()
     {
+      EventManager.GameStateChanged -= SwitchCanvas;
       EventManager.PlayerHealthChanged -= UpdateHealthBar;
       EventManager.PlayerArmorChanged -= UpdateArmorBar;
     }
@@ -40,6 +46,18 @@ namespace SpaceshipVsAsteroids.Ship
       float armorRatio = (float)armor / _playerShip.MaxArmor;
 
       armorBar.fillAmount = armorRatio;
+    }
+
+    private void SwitchCanvas(GameState state)
+    {
+      if (state == GameState.Play)
+      {
+        canvas.SetActive(true);
+      }
+      else
+      {
+        canvas.SetActive(false);
+      }
     }
   }
 }

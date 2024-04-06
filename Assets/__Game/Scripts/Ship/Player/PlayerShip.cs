@@ -42,6 +42,7 @@ namespace SpaceshipVsAsteroids.Ship
       if (CurrentHealth <= 0)
       {
         EventManager.RaisePlayerDead();
+        EventManager.RaiseGameStateChanged(Enums.GameState.EndGame);
 
         Destroy(gameObject);
       }

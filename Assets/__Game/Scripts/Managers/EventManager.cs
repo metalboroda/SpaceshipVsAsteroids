@@ -1,9 +1,15 @@
+using SpaceshipVsAsteroids.Enums;
 using UnityEngine.Events;
 
 namespace SpaceshipVsAsteroids.Managers
 {
   public static class EventManager
   {
+    #region Game
+    public static event UnityAction<GameState> GameStateChanged;
+    public static void RaiseGameStateChanged(GameState state) => GameStateChanged?.Invoke(state);
+    #endregion
+
     #region Player
     public static event UnityAction PlayerDamaged;
     public static void RaisePlayerDamaged() => PlayerDamaged?.Invoke();

@@ -441,6 +441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26ed5fb8068c61f4383e4a27472c00ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 4039667743438547598}
   healthBar: {fileID: 7941806514927712226}
   armorBar: {fileID: 8777956631067129121}
 --- !u!1 &3314390430659996112
