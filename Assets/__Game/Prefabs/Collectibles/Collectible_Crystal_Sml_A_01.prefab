@@ -113,8 +113,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minMovementSpeed: 7.5
   maxMovementSpeed: 22.5
-  minRotationSpeed: 0.1
-  maxRotationSpeed: 0.5
+  minRotationSpeed: 0.025
+  maxRotationSpeed: 0.075
 --- !u!114 &-2884684426810016567
 MonoBehaviour:
   m_ObjectHideFlags: 0
