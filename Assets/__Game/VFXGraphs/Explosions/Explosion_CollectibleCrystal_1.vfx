@@ -2424,7 +2424,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":0.0,"y":47.937259674072269,"z":0.0}'
+      m_SerializableObject: '{"x":0.0,"y":47.937259674072269,"z":12.549019813537598}'
     m_Space: 2147483647
   m_Property:
     name: Color
@@ -4256,7 +4256,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":0.0,"y":47.937259674072269,"z":0.0}'
+      m_SerializableObject: '{"x":0.0,"y":47.937259674072269,"z":12.549019813537598}'
     m_Space: 2147483647
   m_Property:
     name: Color
@@ -6798,7 +6798,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":0.0,"y":47.937259674072269,"z":0.0}'
+      m_SerializableObject: '{"x":0.0,"y":47.937259674072269,"z":12.549019813537598}'
     m_Space: 2147483647
   m_Property:
     name: Color

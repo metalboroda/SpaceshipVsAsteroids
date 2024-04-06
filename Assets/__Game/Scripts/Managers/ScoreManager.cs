@@ -11,13 +11,15 @@ namespace SpaceshipVsAsteroids.Managers
     private void Awake()
     {
       Instance = this;
+
+      EventManager.RaiseScoreChanged(_currentScore);
     }
 
     public void IncreaseScore(int score)
     {
       _currentScore += score;
 
-      EventManager.RaiseScoreChanged(score);
+      EventManager.RaiseScoreChanged(_currentScore);
     }
   }
 }
