@@ -12,6 +12,7 @@ namespace SpaceshipVsAsteroids.Level
     [SerializeField] private List<GameObject> crystalsToSpawn = new List<GameObject>();
 
     [Space]
+    [SerializeField] private bool increaseTime = true;
     [SerializeField] private float initialAsteroidSpawnInterval = 1.5f;
     [SerializeField] private float increasedAsteroidSpawnInterval = 0.5f;
     [SerializeField] private float intervalIncreaseTime = 500f;
@@ -24,26 +25,32 @@ namespace SpaceshipVsAsteroids.Level
     [SerializeField] private GameObject flyingPropTarget;
 
     private float _currentAsteroidSpawnInterval;
-    private Coroutine _asteroidIntervalIncreaseCoroutine;
 
     private void Start()
     {
       _currentAsteroidSpawnInterval = initialAsteroidSpawnInterval;
 
-      StartCoroutine(SpawnWithInterval(
-          _currentAsteroidSpawnInterval, asteroidsToSpawn, SpawnObject));
+      if (asteroidsToSpawn.Count > 0)
+      {
+        StartCoroutine(SpawnWithInterval(
+            _currentAsteroidSpawnInterval, asteroidsToSpawn, SpawnObject));
+      }
 
       if (crystalsToSpawn.Count > 0)
       {
         StartCoroutine(SpawnWithInterval(
                   Random.Range(minCrystalSpawnInterval, maxCrystalSpawnInterval), crystalsToSpawn, SpawnObject));
-        StartAsteroidIntervalIncrease();
+
+        if (increaseTime == true)
+        {
+          StartAsteroidIntervalIncrease();
+        }
       }
     }
 
     private void StartAsteroidIntervalIncrease()
     {
-      _asteroidIntervalIncreaseCoroutine = StartCoroutine(IncreaseAsteroidSpawnInterval());
+      StartCoroutine(IncreaseAsteroidSpawnInterval());
     }
 
     private IEnumerator IncreaseAsteroidSpawnInterval()

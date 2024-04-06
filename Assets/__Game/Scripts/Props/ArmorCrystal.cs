@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace SpaceshipVsAsteroids.Props
 {
-  public class Crystal : MonoBehaviour
+  public class ArmorCrystal : MonoBehaviour
   {
     public event Action CrystalDestroyed;
 

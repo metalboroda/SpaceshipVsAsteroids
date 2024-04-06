@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 280060464458057993}
   - component: {fileID: 579190912168313198}
   - component: {fileID: 1413082228991008662}
+  - component: {fileID: 4841902443480923843}
   m_Layer: 0
   m_Name: PropsPool
   m_TagString: Untagged
@@ -175,6 +176,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 6005747557350679629, guid: 91ae7f9a8ffe8a048bb2cb2bafc3acbe, type: 3}
+  notification: 3
+  strategy: 0
+  preload: 5
+  capacity: 5
+  recycle: 1
+  persist: 0
+  stamp: 0
+  warnings: 1
+  spawnedClonesList: []
+  despawnedClones: []
+  delays: []
+  deactivatedChild: {fileID: 0}
+--- !u!114 &4841902443480923843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738541918196956152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea08375da243a441b88d1e6b0713006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5903845656278578782, guid: e2ffb3e4eed06e24a86d27188066dc4c, type: 3}
   notification: 3
   strategy: 0
   preload: 5

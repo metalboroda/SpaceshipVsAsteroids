@@ -2,7 +2,7 @@ using SpaceshipVsAsteroids.Visual;
 
 namespace SpaceshipVsAsteroids.Props
 {
-  public class CrystalVisualHandler : ObjectVisualHandlerBase<Crystal>
+  public class CollectibleCrystalVisualHandler : ObjectVisualHandlerBase<CollectibleCrystal>
   {
     protected override void SubscribeEvents()
     {

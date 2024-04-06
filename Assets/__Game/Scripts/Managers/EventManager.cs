@@ -20,5 +20,10 @@ namespace SpaceshipVsAsteroids.Managers
     public static event UnityAction PlayerDead;
     public static void RaisePlayerDead() => PlayerDead?.Invoke();
     #endregion
+
+    #region Score
+    public static event UnityAction<int> ScoreChanged;
+    public static void RaiseScoreChanged(int score) => ScoreChanged?.Invoke(score);
+    #endregion
   }
 }

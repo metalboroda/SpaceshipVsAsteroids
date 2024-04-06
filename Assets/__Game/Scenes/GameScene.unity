@@ -564,6 +564,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 540563081}
+  - {fileID: 1686677204}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &784645457
@@ -780,6 +781,75 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1041723623
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1041723624}
+  - component: {fileID: 1041723626}
+  - component: {fileID: 1041723625}
+  m_Layer: 0
+  m_Name: FlyingPropSpawner_Collectibles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1041723624
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041723623}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 65}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5225204124102319827}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1041723625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041723623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c73b041562ca2f4fa3e0ee4bf43472a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroidsToSpawn: []
+  crystalsToSpawn:
+  - {fileID: 5903845656278578782, guid: e2ffb3e4eed06e24a86d27188066dc4c, type: 3}
+  increaseTime: 1
+  initialAsteroidSpawnInterval: 1.5
+  increasedAsteroidSpawnInterval: 0.25
+  intervalIncreaseTime: 100
+  intervalIncreaseMultiplier: 0.01
+  minCrystalSpawnInterval: 3.5
+  maxCrystalSpawnInterval: 7.5
+  flyingPropTarget: {fileID: 2254333591960346855}
+--- !u!114 &1041723626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041723623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9514918166a6f004caa8147ad8aca643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleDecreasePercent: 0.9
 --- !u!1 &1158184494
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,6 +881,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5225204124102319827}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1686677203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1686677204}
+  - component: {fileID: 1686677205}
+  m_Layer: 0
+  m_Name: ScoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1686677204
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686677203}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 542347185}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1686677205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686677203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3751b5972ef1ece4a82c1c7dd507de2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1850940676
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,6 +1323,7 @@ Transform:
   - {fileID: 623581243636984669}
   - {fileID: 5841901675577539798}
   - {fileID: 5356369641900671709}
+  - {fileID: 1041723624}
   - {fileID: 4999486136317874742}
   - {fileID: 1175974708496202176}
   - {fileID: 3555951913004661252}
@@ -1376,6 +1491,7 @@ GameObject:
   - component: {fileID: 369833957539184988}
   - component: {fileID: 48483080676006621}
   - component: {fileID: 4503377630987580370}
+  - component: {fileID: 7298741481985611744}
   m_Layer: 0
   m_Name: ExplosionsVFXPool
   m_TagString: Untagged
@@ -1383,6 +1499,31 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7298741481985611744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7298741481985611743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea08375da243a441b88d1e6b0713006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4414347565083969854, guid: 304ccb47b75d8e54fbb9b0cfb02e21c4, type: 3}
+  notification: 3
+  strategy: 0
+  preload: 3
+  capacity: 3
+  recycle: 1
+  persist: 0
+  stamp: 0
+  warnings: 1
+  spawnedClonesList: []
+  despawnedClones: []
+  delays: []
+  deactivatedChild: {fileID: 0}
 --- !u!114 &7336018180002954693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1403,6 +1544,7 @@ MonoBehaviour:
   - {fileID: 3400638722668212847, guid: 9251d234df85bd44d9975b1d2dc9bab9, type: 3}
   crystalsToSpawn:
   - {fileID: 6005747557350679629, guid: 91ae7f9a8ffe8a048bb2cb2bafc3acbe, type: 3}
+  increaseTime: 1
   initialAsteroidSpawnInterval: 1.5
   increasedAsteroidSpawnInterval: 0.25
   intervalIncreaseTime: 100
