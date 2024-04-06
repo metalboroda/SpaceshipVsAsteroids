@@ -30,6 +30,9 @@ namespace SpaceshipVsAsteroids.Managers
     #region Score
     public static event UnityAction<int> ScoreChanged;
     public static void RaiseScoreChanged(int score) => ScoreChanged?.Invoke(score);
+
+    public static event UnityAction<int> AsteroidContacted;
+    public static void RaiseAsteroidContacted(int contact) => AsteroidContacted?.Invoke(contact);
     #endregion
   }
 }

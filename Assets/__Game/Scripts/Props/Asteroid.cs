@@ -1,5 +1,6 @@
 using Lean.Pool;
 using SpaceshipVsAsteroids.Interfaces;
+using SpaceshipVsAsteroids.Managers;
 using System;
 using UnityEngine;
 
@@ -16,9 +17,12 @@ namespace SpaceshipVsAsteroids.Props
 
     private int _currentHealth;
 
+    private ScoreManager _scoreManager;
+
     private void Start()
     {
       _currentHealth = health;
+      _scoreManager = ScoreManager.Instance;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -38,6 +42,8 @@ namespace SpaceshipVsAsteroids.Props
         _currentHealth = 0;
 
         AsteroidDestroyed?.Invoke();
+
+        _scoreManager.IncreaseAsteroidContacts(1);
 
         LeanPool.Despawn(gameObject);
       }

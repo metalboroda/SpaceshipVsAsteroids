@@ -19,6 +19,10 @@ namespace SpaceshipVsAsteroids.Managers
     [SerializeField] private TextMeshProUGUI collectibleCounterText;
     [SerializeField] private Image collectibleIcon;
 
+    [Header("AsteroidContacts")]
+    [SerializeField] private TextMeshProUGUI asteroidContactsCounterText;
+    [SerializeField] private Image asteroidContactsIcon;
+
     [Header("Game")]
     [SerializeField] private Button gamePauseBtn;
 
@@ -39,12 +43,14 @@ namespace SpaceshipVsAsteroids.Managers
     {
       EventManager.GameStateChanged += SwitchCanvas;
       EventManager.ScoreChanged += DisplayCollectibleText;
+      EventManager.AsteroidContacted += DisplayAsteroidContactsText;
     }
 
     private void OnDisable()
     {
       EventManager.GameStateChanged -= SwitchCanvas;
       EventManager.ScoreChanged -= DisplayCollectibleText;
+      EventManager.AsteroidContacted -= DisplayAsteroidContactsText;
     }
 
     private void Start()
@@ -100,9 +106,27 @@ namespace SpaceshipVsAsteroids.Managers
       PunchCollectibleIcon();
     }
 
+    private void DisplayAsteroidContactsText(int contacts)
+    {
+      asteroidContactsCounterText.SetText(contacts.ToString());
+
+      PunchAsteroidContactsIcon();
+    }
+
     private void PunchCollectibleIcon()
     {
-      collectibleIcon.transform.DOPunchRotation(new Vector3(0, 0, 25), 0.5f).SetEase(Ease.OutQuad);
+      PunchIcon(collectibleIcon);
+    }
+
+    private void PunchAsteroidContactsIcon()
+    {
+      PunchIcon(asteroidContactsIcon);
+    }
+
+    private void PunchIcon(Image icon)
+    {
+      icon.transform.DOPunchRotation(new Vector3(0, 0, 25), 0.5f).SetEase(Ease.OutQuad);
+
     }
   }
 }
