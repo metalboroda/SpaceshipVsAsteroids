@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <MaxHealth>k__BackingField: 500
-  <MaxArmor>k__BackingField: 100
+  <MaxArmor>k__BackingField: 150
   <CollisionDamage>k__BackingField: 100
 --- !u!114 &1907496705748331519
 MonoBehaviour:

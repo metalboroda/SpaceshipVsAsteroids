@@ -8,7 +8,7 @@ using Zenject;
 
 namespace SpaceshipVsAsteroids.Managers
 {
-  public class UIManager : MonoBehaviour
+  public class GameUIManager : MonoBehaviour
   {
     [Header("Canvases")]
     [SerializeField] private GameObject gameCanvas;
@@ -24,6 +24,7 @@ namespace SpaceshipVsAsteroids.Managers
 
     [Header("Pause")]
     [SerializeField] private Button pausePlayBtn;
+    [SerializeField] private Button pauseRestartBtn;
     [SerializeField] private Button pauseExitBtn;
 
     [Header("EndGame")]
@@ -32,7 +33,7 @@ namespace SpaceshipVsAsteroids.Managers
 
     private List<GameObject> _canvases = new List<GameObject>();
 
-    [Inject] private readonly GameManager _gameManager;
+    [Inject] private ScenesManager _scenesManager;
 
     private void OnEnable()
     {
@@ -61,9 +62,14 @@ namespace SpaceshipVsAsteroids.Managers
 
     private void SubscribeButtons()
     {
-      gamePauseBtn.onClick.AddListener(() => { _gameManager.ChangeState(GameState.Pause); });
+      gamePauseBtn.onClick.AddListener(() => { EventManager.RaiseGameStateChanged(GameState.Pause); });
 
-      pausePlayBtn.onClick.AddListener(() => { _gameManager.ChangeState(GameState.Play); });
+      pausePlayBtn.onClick.AddListener(() => { EventManager.RaiseGameStateChanged(GameState.Play); });
+      pauseRestartBtn.onClick.AddListener(() => { _scenesManager.RestartScene(); });
+      pauseExitBtn.onClick.AddListener(() => { _scenesManager.ToMainMenuScene(); });
+
+      endGameRestartBtn.onClick.AddListener(() => { _scenesManager.RestartScene(); });
+      endGameExitBtn.onClick.AddListener(() => { _scenesManager.ToMainMenuScene(); });
     }
 
     private void SwitchCanvas(GameState gameState)
